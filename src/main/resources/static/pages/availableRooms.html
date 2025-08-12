@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tetris Multiplayer</title>
+  <link rel="stylesheet" href="/css/availableRooms.css" />
+  <link rel="stylesheet" href="/css/background.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
+</head>
+
+<body>
+
+  <div id="background-overlay"></div>
+
+  <main class="container">
+
+    <div id="auth-container">
+      <h1 class="titulo" id="title">Acesse sua Conta</h1>
+      <form id="login-form" class="auth-form">
+        <div class="form-group">
+          <label for="username">Nome de usuário</label>
+          <input type="text" id="username" name="username" placeholder="Digite seu nome de usuário" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <input type="password" id="password" name="password" placeholder="Digite sua senha" required />
+        </div>
+        <button type="submit" id="btn-confirmar" class="btn-confirmar">Entrar</button>
+      </form>
+      <div class="register">
+        <p id="btn-registrar" class="btn-registrar">Registrar-se</p>
+      </div>
+    </div>
+
+    <div id="salas-container" style="display: none;">
+      <h1 class="titulo">Salas Disponíveis</h1>
+      <ul class="lista-salas"></ul>
+
+      <button class="btn-criar-sala">Criar Nova Sala</button>
+
+      <div class="button-container">
+        <button id="btn-voltar" class="btn-red-color btn-criar-sala">Voltar ao menu</button>
+        <button id="btn-deslogadr" class="btn-red-color btn-criar-sala">Deslogar</button>
+
+      </div>
+    </div>
+
+  </main>
+
+  <script type="module" src="/js/pages/availableRooms.js"></script>
+  <script type="module" src="/js/utils.js"></script>
+
+</body>
+
+</html>

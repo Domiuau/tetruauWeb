@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criação de Sala</title>
+    <link rel="stylesheet" href="/css/createRoom.css" />
+</head>
+
+<body>
+
+    <div id="background-overlay"></div>
+
+    <div class="container">
+        <h1 class="subtitulo">Criação de Sala</h1>
+        <form id="create-room-form">
+            <div class="form-group">
+                <label for="room-name">Nome da Sala</label>
+                <input type="text" id="room-name" name="room-name" placeholder="Digite o nome da sala" required />
+            </div>
+            <div class="form-group">
+                <label for="num-players">Quantidade de Jogadores</label>
+                <input type="number" id="num-players" name="num-players" min="2" value="6" required />
+            </div>
+
+            <marquee> <p>opcoes a baixo em desenvolvimento  <hr> </p></marquee>
+
+            <div class="form-group">
+                <label for="num-columns">Quantidade de Colunas</label>
+                <input type="number" id="num-columns" name="num-columns" min="4" value="10" required />
+            </div>
+            <div class="form-group">
+                <label for="num-rows">Quantidade de Linhas</label>
+                <input type="number" id="num-rows" name="num-rows" min="6" value="20" required />
+            </div>
+            <div class="form-group">
+                <label for="speed">Velocidade</label>
+                <select id="speed" name="speed">
+                    <option value="very-slow">Muito Devagar</option>
+                    <option value="slow">Devagar</option>
+                    <option value="medium">Média</option>
+                    <option value="fast">Rápida</option>
+                    <option value="very-fast">Muito Rápida</option>
+                </select>
+            </div>
+            <div class="form-group toggle-container">
+                <label for="auto-speed">Aumentar velocidade constantemente</label>
+                <input type="checkbox" id="auto-speed" name="auto-speed" checked/>
+            </div>
+            <div class="botoes">
+                <button type="button" class="btn-voltar" id="btn-voltar">Voltar</button>
+                <button type="button" class="btn-criar" id="btn-criar">Criar Sala</button>
+            </div>
+        </form>
+    </div>
+    <script type="module" src="/js/pages/createRoom.js"></script>
+
+</body>
+
+</html>

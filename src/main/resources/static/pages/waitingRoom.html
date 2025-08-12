@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sala de Espera</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
+    <link rel="stylesheet" href="/css/waitingRooms.css" />
+</head>
+
+<body>
+    <div id="background-overlay"></div>
+
+    <main class="container">
+        <div class="sala-info">
+            <span class="sala-id">Sala ID: <span id="sala-id-text"></span></span>
+            <button class="btn-copiar-id">Copiar ID</button>
+        </div>
+
+        <section class="players">
+            <h2 class="subtitulo">Jogadores</h2>
+            <ul class="lista-jogadores">
+
+            </ul>
+        </section>
+
+        <section class="chat">
+            <h2 class="subtitulo">Chat</h2>
+            <div class="chat-mensagens" id="chat-mensagens"></div>
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" placeholder="..." />
+                <button class="btn-enviar">Enviar</button>
+            </div>
+        </section>
+
+        <div class="botoes">
+
+            <button class="btn-sair">Sair</button>
+            <button class="btn-jogar">Jogar</button>
+        </div>
+    </main>
+
+    <script type="module" src="/js/utils.js"></script>
+    <script type="module" src="/js/pages/waitingRoom.js"></script>
+</body>
+
+</html>

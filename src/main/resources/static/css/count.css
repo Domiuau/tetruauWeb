@@ -1,0 +1,40 @@
+:root {
+    --tetris-black: #000000da;
+    --tetris-cyan: #0ea5e9;
+    --tetris-blue: #2563eb;
+    --tetris-orange: #f97316;
+    --tetris-yellow: #eab308;
+    --tetris-green: #16a34a;
+    --tetris-purple: #7c3aed;
+    --tetris-red: #dc2626;
+}
+  
+  @keyframes colorFontCycle {
+  0%   { color: var(--tetris-cyan); }
+  14%  { color: var(--tetris-blue); }
+  28%  { color: var(--tetris-orange); }
+  42%  { color: var(--tetris-yellow); }
+  57%  { color: var(--tetris-green); }
+  71%  { color: var(--tetris-purple); }
+  85%  { color: var(--tetris-red); }
+  100% { color: var(--tetris-cyan); }
+}
+
+  
+  #countdown-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    flex-direction: column;
+  }
+
+  #countdown-overlay .count {
+    font-size: 20vw;
+    animation: colorFontCycle 4s linear infinite;
+    font-weight: bold;
+  }

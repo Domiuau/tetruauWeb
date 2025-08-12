@@ -1,0 +1,24 @@
+:root {
+    --tetris-black: #000000da;
+    --tetris-cyan: #0ea5e9;
+    --tetris-blue: #2563eb;
+    --tetris-orange: #f97316;
+    --tetris-yellow: #eab308;
+    --tetris-green: #16a34a;
+    --tetris-purple: #7c3aed;
+    --tetris-red: #dc2626;
+    --tetris-gray: #6b72806c;
+    --tetris-light: #d1d5db;
+    --tetris-next: #ffffff00;
+    --tetris-block: #292929;
+    --tetris-cyan-alpha: #0ea4e94b;
+    --tetris-blue-alpha: #2563eb4b;
+    --tetris-orange-alpha: #f973164b;
+    --tetris-yellow-alpha: #eab3084b;
+    --tetris-green-alpha: #16a34a4b;
+    --tetris-purple-alpha: #7c3aed4b;
+    --tetris-red-alpha: #dc26264b;
+
+
+
+}

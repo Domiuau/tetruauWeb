@@ -1,0 +1,200 @@
+
+
+:root {
+    --tetris-black: #000000da;
+    --tetris-cyan: #0ea5e9;
+    --tetris-blue: #2563eb;
+    --tetris-orange: #f97316;
+    --tetris-yellow: #eab308;
+    --tetris-green: #16a34a;
+    --tetris-purple: #7c3aed;
+    --tetris-red: #dc2626;
+    --tetris-gray: #6b72806c;
+    --tetris-light: #d1d5db;
+    --tetris-next: #ffffff00;
+    --tetris-block: #292929;
+    --tetris-cyan-alpha: #0ea4e94b;
+    --tetris-blue-alpha: #2563eb4b;
+    --tetris-orange-alpha: #f973164b;
+    --tetris-yellow-alpha: #eab3084b;
+    --tetris-green-alpha: #16a34a4b;
+    --tetris-purple-alpha: #7c3aed4b;
+    --tetris-red-alpha: #dc26264b;
+}
+
+@keyframes bgCycle {
+  0%   { background-color: var(--tetris-cyan); }
+  14%  { background-color: var(--tetris-blue); }
+  28%  { background-color: var(--tetris-orange); }
+  42%  { background-color: var(--tetris-yellow); }
+  57%  { background-color: var(--tetris-green); }
+  71%  { background-color: var(--tetris-purple); }
+  85%  { background-color: var(--tetris-red); }
+  100% { background-color: var(--tetris-cyan); }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--tetris-light);
+}
+
+#background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 102%;
+    height: 104%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    filter: blur(10px);
+    margin: -20px;
+}
+
+#background-overlay::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.container {
+    background-color: var(--tetris-black);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.sala-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.sala-id {
+    font-size: 0.8rem;
+}
+
+.btn-copiar-id {
+    padding: 0.5rem 1rem;
+    background-color: var(--tetris-cyan);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.players {
+    margin-bottom: 1rem;
+}
+
+.subtitulo {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--tetris-cyan);
+}
+
+.lista-jogadores {
+    list-style: none;
+    padding: 0;
+}
+
+.jogador {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--tetris-gray);
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat {
+    margin-bottom: 1.5rem;
+}
+
+.chat-mensagens {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--tetris-gray);
+    border-radius: 5px;
+    height: 200px;
+    overflow-y: auto;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.chat-input-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid var(--tetris-gray);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--tetris-light);
+}
+
+.btn-enviar {
+    background-color: var(--tetris-cyan);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.btn-copiar-id:hover,
+.btn-enviar:hover {
+    background-color: var(--tetris-cyan-alpha);
+}
+
+
+.btn-jogar:hover {
+    animation: bgCycle 1s linear infinite;
+}
+
+.btn-sair:hover {
+    background-color: var(--tetris-red-alpha);
+}
+
+.botoes {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+}
+
+.btn-jogar,
+.btn-sair {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.btn-jogar {
+    animation: bgCycle 5s linear infinite;
+    color: #fff;
+}
+
+.btn-sair {
+    background-color: var(--tetris-red);
+    color: #fff;
+}

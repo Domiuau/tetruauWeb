@@ -1,0 +1,142 @@
+@keyframes bgCycle {
+  0%   { background-color: var(--tetris-cyan-alpha); }
+  14%  { background-color: var(--tetris-blue-alpha); }
+  28%  { background-color: var(--tetris-orange-alpha); }
+  42%  { background-color: var(--tetris-yellow-alpha); }
+  57%  { background-color: var(--tetris-green-alpha); }
+  71%  { background-color: var(--tetris-purple-alpha); }
+  85%  { background-color: var(--tetris-red-alpha); }
+  100% { background-color: var(--tetris-cyan-alpha); }
+}
+
+@keyframes colorFontCycle {
+  0%   { color: var(--tetris-cyan); }
+  14%  { color: var(--tetris-blue); }
+  28%  { color: var(--tetris-orange); }
+  42%  { color: var(--tetris-yellow); }
+  57%  { color: var(--tetris-green); }
+  71%  { color: var(--tetris-purple); }
+  85%  { color: var(--tetris-red); }
+  100% { color: var(--tetris-cyan); }
+}
+
+
+#winner-popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden; opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1000;
+  animation: bgCycle 8s ease-in-out infinite;
+}
+
+#winner-popup.show {
+  visibility: visible; opacity: 0.8;
+}
+
+#confetti-canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 1001;
+}
+
+#winner-popup .popup-content {
+  position: relative;
+  background-color: #000000fd;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%; max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.7);
+  transform: scale(0.8) translateY(-50px);
+  animation: popupIn 0.6s forwards;
+  font-family: 'Press Start 2P', sans-serif;
+  color: var(--tetris-light);
+}
+
+@keyframes popupIn {
+  to {
+    transform: scale(1) translateY(0);
+  }
+}
+
+#winner-name {
+  font-size: 2.2rem;
+  margin-bottom: 1.4rem;
+  animation: bounce 1s infinite, colorFontCycle 8s ease-in-out infinite;
+}
+
+#timer {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: var(--tetris-light);
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.1); }
+}
+
+#players-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem auto;
+  font-family: 'Press Start 2P', sans-serif;
+}
+
+#players-container h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--tetris-cyan);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.players-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.players-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #202020c7;
+  border: 1px solid var(--tetris-light);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  color: var(--tetris-light);
+  font-size: 1rem;
+}
+
+.players-list .player-name {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.players-list .player-score {
+  color: var(--tetris-cyan);
+  font-weight: bold;
+}
+
+
+

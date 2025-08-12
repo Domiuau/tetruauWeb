@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/canvaTetris.css">
+    <link rel="stylesheet" href="/css/colors.css">
+    <link rel="stylesheet" href="/css/myGame.css">
+    <link rel="stylesheet" href="/css/background.css">
+    <link rel="stylesheet" href="/css/winner.css">
+    <link rel="stylesheet" href="/css/count.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="winner-popup">
+        <div class="popup-content">
+            <h1 id="winner-name"></h1>
+            <div id="timer">10s</div>
+            <div id="players-container">
+                <ul class="players-list">
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="countdown-overlay">
+        <div class="count"></div>
+    </div>
+
+    <div id="background-overlay"></div>
+
+    <div class="game-canvas" id="game-canvas">
+
+        <div class="game my-game" id="my-game">
+
+            <canvas id="hold" class="hold"></canvas>
+            <canvas id="tetris" class="tetris"></canvas>
+            <canvas id="next" class="next"></canvas>
+
+        </div>
+
+        <div class="other-games" id="other-games">
+
+
+        </div>
+    </div>
+
+</body>
+<script type="module" src="/js/game.js"></script>
+<script type="module" src="/js/gameLogic.js"></script>
+<script type="module" src="/js/render.js"></script>
+<script type="module" src="/js/keyboardListener.js"></script>
+<script type="module" src="/js/onlineMatchCommunicator.js"></script>
+
+
+
+</html>
