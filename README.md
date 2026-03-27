@@ -28,15 +28,15 @@
 
 - 4 Players se enfrentando
   
-![Dentro do jogo](https://github.com/Domiuau/tetruau/blob/master/Assets/in-game.png)
+![Dentro do jogo](https://github.com/Domiuau/tetruauWeb/blob/master/Assets/in-game.png)
 
 # Lobby
 
-![Lobby](https://github.com/Domiuau/tetruau/blob/master/Assets/lobby.png)
+![Lobby](https://github.com/Domiuau/tetruauWeb/blob/master/Assets/lobby.png)
 
 - Criando Lobby
 
-![Criando Lobby](https://github.com/Domiuau/tetruau/blob/master/Assets/create-lobby.png)
+![Criando Lobby](https://github.com/Domiuau/tetruauWeb/blob/master/Assets/create-lobby.png)
 
 
 
