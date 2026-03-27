@@ -13,7 +13,7 @@ const roomId = urlParams.get('id')
 const audioMenuMusic = new Audio('/audio/menuMusic.mp3');
 audioMenuMusic.volume = 0.08
 audioMenuMusic.loop = true
-audioMenuMusic.play()
+
 
 
 console.log(roomId)
@@ -24,6 +24,7 @@ stompClient.onConnect = (frame) => {
     subscribleRoom()
     subscribeChat()
     subscribeStartGame()
+    audioMenuMusic.play()
 };
 
 
