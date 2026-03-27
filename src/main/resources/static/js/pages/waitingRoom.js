@@ -11,7 +11,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const roomId = urlParams.get('id')
 
 const audioMenuMusic = new Audio('/audio/menuMusic.mp3');
-audioMenuMusic.volume = 0.08
+audioMenuMusic.volume = 0.07
 audioMenuMusic.loop = true
 
 

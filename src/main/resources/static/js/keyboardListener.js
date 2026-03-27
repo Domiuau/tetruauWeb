@@ -15,7 +15,10 @@ document.addEventListener("keydown", (event) => {
 
   switch (event.key) {
     case " ":
-      if (gameRolling.rolling) lockPiece();
+      if (gameRolling.rolling) {
+        event.preventDefault();
+        lockPiece();
+      }
       break;
     case "a":
       if (gameRolling.rolling) lockPiece();
