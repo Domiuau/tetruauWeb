@@ -27,7 +27,6 @@ public class WaitingRoomController {
     @ResponseBody
     @CrossOrigin
     public ResponseEntity<CreatedRoomDTO> createRoom(@RequestBody CreateRoomDTO createRoomDTO) {
-        System.out.println(createRoomDTO);
         return waitingRoomsService.createWaitingRoom(createRoomDTO);
     }
 

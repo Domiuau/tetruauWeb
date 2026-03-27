@@ -36,8 +36,6 @@ public class WaitingRoomsService {
 
     public void sendMessageRoomChat(RoomChatDTO roomChatDTO) {
 
-        System.out.println(roomChatDTO);
-
         Optional<WaitingRoom> waitingRoom = getRoomById(roomChatDTO.room());
         waitingRoom.ifPresent(room -> {
             messagingTemplate.convertAndSend("/room/chat/" + room.getId(), roomChatDTO);
@@ -54,11 +52,7 @@ public class WaitingRoomsService {
 
             boolean addPlayer = true;
 
-            System.out.println("tamanho lista player " + waitingRoom.get().getPlayers());
-
             for (TempPlayer tempPlayer : waitingRoom.get().getPlayers()) {
-
-                System.out.println(tempPlayer.getName() + " igual a " + enterRoomDTO.playerName());
 
                 if (tempPlayer.getName().equals(enterRoomDTO.playerName())) {
                     addPlayer = false;
@@ -69,7 +63,6 @@ public class WaitingRoomsService {
             TempPlayer tempPlayer = new TempPlayer(enterRoomDTO.playerName());
 
             if (addPlayer) {
-                System.out.println("adicionando " + tempPlayer);
                 waitingRoom.get().addPlayer(tempPlayer);
             }
 
@@ -86,7 +79,6 @@ public class WaitingRoomsService {
         waitingRoom.ifPresent(room -> {
 
             if (waitingRoom.get().getState() != State.IN_GAME) {
-                System.out.println("removendo player " + username + " " + waitingRoom.get().getState());
                 room.removePlayer(username);
                 messagingTemplate.convertAndSend("/room/" + waitingRoom.get().getId(),
                         new RoomActionDTO(RoomAction.EXIT, username, 0L, waitingRoom.get().getPlayeds(), waitingRoom.get().getPlayers()));
@@ -102,10 +94,6 @@ public class WaitingRoomsService {
     }
 
     public Optional<WaitingRoom> getRoomById(String id) {
-
-        System.out.println("ids das rooms");
-
-        waitingRooms.forEach(waitingRoom -> System.out.println(waitingRoom.getId()));
 
         for (WaitingRoom waitingRoom : waitingRooms) {
             if (waitingRoom.getId().equals(id)) {

@@ -26,7 +26,6 @@ public class GameController {
 
     @MessageMapping("/game/eliminated")
     public void endGame(@Payload EliminatedDTO eliminatedDTO) {
-        System.out.println(eliminatedDTO);
         gameService.eliminatePlayer(eliminatedDTO);
     }
 
