@@ -34,7 +34,6 @@ public class GameService {
     }
 
     public void startGame(StartGameDTO startGameDTO) {
-        System.out.println(startGameDTO.room() + " iniciando game ");
 
         Optional<WaitingRoom> room = waitingRoomsService.getRoomById(startGameDTO.room());
         room.ifPresent(waitingRoom -> {
@@ -50,8 +49,6 @@ public class GameService {
 
         Optional<WaitingRoom> room = waitingRoomsService.getRoomById(sendAttackDTO.roomId());
 
-        System.out.println(room.isPresent());
-
         room.ifPresent(waitingRoom -> {
             for (TempPlayer tempPlayer : room.get().getPlayers()) {
                 if (tempPlayer.getName().equals(sendAttackDTO.from())) {
@@ -61,9 +58,6 @@ public class GameService {
             }
 
             String randomPlayerUsername = room.get().getRandomPlayerExcludesFrom(sendAttackDTO.from()).getName();
-
-            System.out.println("blanlas");
-            System.out.println("player recebendo " + randomPlayerUsername);
 
             messagingTemplate.convertAndSend(
                     "/game/receive-attack/" + sendAttackDTO.roomId(),
@@ -97,8 +91,6 @@ public class GameService {
                 tempPlayer.setLinesSend(eliminatedDTO.linesSend());
             });
 
-
-            System.out.println("tamanho lista players " + waitingRoom.get().getAlivePlayers().size());
 
             if (waitingRoom.get().getAlivePlayers().size() <= 1) {
 
