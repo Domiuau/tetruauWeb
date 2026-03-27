@@ -9,7 +9,6 @@
 <a href="https://www.youtube.com/watch?v=BQBYc-a8gpI">
 <p align="center">▶ Assista à demonstração</p>
   <img src="https://img.youtube.com/vi/BQBYc-a8gpI/0.jpg" alt="Demo Tetris Web"/>
-
 </a>
 
 # Momentaneamente Online
